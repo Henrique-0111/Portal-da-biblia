@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal da Bíblia — A Palavra que transforma vidas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4c2.5-1 5.5-1 8 0v14c-2.5-1-5.5-1-8 0V4Z"/><path d="M22 4c-2.5-1-5.5-1-8 0v14c2.5-1 5.5-1 8 0V4Z"/></svg>
+    Portal da Bíblia
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html" class="active">Início</a>
+    <a href="#">Bíblia
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+    <a href="#">Devocionais</a>
+    <a href="#">Estudos
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+    <a href="#">Recursos
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+    <a href="#">Sobre</a>
+    <a href="#">Loja</a>
+  </nav>
+
+</header>
+
+<body>
+<main>
+
+    <section id="login">
+
+        <div id="fonte">
+
+            <h1>Sistema Login</h1>
+
+        </div>
+
+        <div class="login">
+
+            <input type="text" id="usuario" placeholder="Usuário">
+
+            <input type="password" id="senha" placeholder="Senha">
+
+        </div>
+
+        <div id="button">
+
+            <button  href="index.html" onclick="entrar()" type="submit">Entrar</button>
+
+            <p id="mensagem"></p>
+
+        </div>
+
+        <div id="execao">
+
+            <p>*Não é permitido sequencias ex:123 </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
