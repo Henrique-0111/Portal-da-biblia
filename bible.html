@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bíblia Online | Portal da Bíblia</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+
+  <a href="index.html" class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4c2.5-1 5.5-1 8 0v14c-2.5-1-5.5-1-8 0V4Z"/><path d="M22 4c-2.5-1-5.5-1-8 0v14c2.5-1 5.5-1 8 0V4Z"/></svg>
+    Portal da Bíblia
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Início</a>
+    <a href="bible.html" class="active">Bíblia</a>
+    <a href="#">Devocionais</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="#">Loja</a>
+    <a href="perfil.html">Perfil</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="login.html" class="btn-outline" data-auth="guest">Entrar</a>
+    <a href="cadastro.html" class="btn-solid" data-auth="guest">Criar conta</a>
+
+    <a href="perfil.html" class="header-conta" data-auth="user" hidden>
+      <span class="header-conta-avatar" id="headerContaAvatar"></span>
+      <span class="header-conta-nome" id="headerContaNome"></span>
+    </a>
+  </div>
+
+</header>
+
+<!-- ===== BARRA DE FERRAMENTAS DA BÍBLIA ===== -->
+<div class="bible-toolbar">
+  <div class="bible-toolbar-inner">
+
+    <div class="bible-nav-group">
+      <button class="icon-nav" id="btnAnterior" aria-label="Capítulo anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <button class="bible-posicao" id="btnAbrirIndice" type="button">
+        <span id="posicaoLivro">Carregando</span>
+        <span id="posicaoCapitulo"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+
+      <button class="icon-nav" id="btnProximo" aria-label="Próximo capítulo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <form class="bible-search" id="formBusca">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="inputBusca" placeholder="Buscar palavra ou trecho na Bíblia...">
+    </form>
+
+    <div class="font-controls">
+      <button type="button" id="fontMenos" aria-label="Diminuir fonte">A-</button>
+      <button type="button" id="fontMais" aria-label="Aumentar fonte">A+</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PAINEL DE ÍNDICE (livros/capítulos) ===== -->
+<div class="indice-overlay hidden" id="painelIndice">
+  <div class="indice-modal">
+
+    <div class="indice-header">
+      <button class="indice-voltar hidden" id="voltarLivros" type="button">← Voltar</button>
+      <h3 id="indiceTitulo">Livros da Bíblia</h3>
+      <button class="indice-fechar" id="fecharIndice" type="button" aria-label="Fechar">✕</button>
+    </div>
+
+    <div class="indice-livros" id="indiceLivros"></div>
+    <div class="indice-capitulos hidden" id="indiceCapitulos"></div>
+
+  </div>
+</div>
+
+<!-- ===== LAYOUT PRINCIPAL: sidebar + leitura ===== -->
+<div class="bible-layout">
+
+  <aside class="bible-sidebar">
+    <h3>Meus versículos marcados</h3>
+    <p class="sidebar-hint">Toque em qualquer versículo do texto para marcá-lo.</p>
+    <ul class="marcados-list" id="listaMarcados"></ul>
+  </aside>
+
+  <main class="bible-reader">
+
+    <!-- área de leitura normal -->
+    <div id="areaLeitura">
+      <h1 id="tituloCapitulo">Carregando a Bíblia...</h1>
+      <div class="versiculos" id="conteudoVersiculos">
+        <p class="carregando">Aguarde um instante enquanto carregamos o texto sagrado 📖</p>
+      </div>
+
+      <div class="chapter-footer-nav">
+        <button class="btn-outline" id="btnAnteriorRodape" type="button">← Capítulo anterior</button>
+        <button class="btn-solid" id="btnProximoRodape" type="button">Próximo capítulo →</button>
+      </div>
+    </div>
+
+    <!-- resultados de busca (some por padrão) -->
+    <div class="search-results hidden" id="resultadosBusca">
+      <div class="search-results-head">
+        <h2 id="tituloBusca">Resultados da busca</h2>
+        <button class="link-fechar" id="fecharBusca" type="button">✕ Fechar</button>
+      </div>
+      <div id="listaResultados"></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4c2.5-1 5.5-1 8 0v14c-2.5-1-5.5-1-8 0V4Z"/><path d="M22 4c-2.5-1-5.5-1-8 0v14c2.5-1 5.5-1 8 0V4Z"/></svg>
+    Portal da Bíblia
+  </div>
+  <p>"Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho." — Salmos 119:105</p>
+  <p>&copy; 2026 Portal da Bíblia. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

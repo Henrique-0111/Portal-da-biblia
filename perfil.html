@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Conta | Portal da Bíblia</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+
+  <a href="index.html" class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4c2.5-1 5.5-1 8 0v14c-2.5-1-5.5-1-8 0V4Z"/><path d="M22 4c-2.5-1-5.5-1-8 0v14c2.5-1 5.5-1 8 0V4Z"/></svg>
+    Portal da Bíblia
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Início</a>
+    <a href="bible.html">Bíblia</a>
+    <a href="#">Devocionais</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="#">Loja</a>
+    <a href="perfil.html" class="active">Perfil</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="login.html" class="btn-outline" data-auth="guest">Entrar</a>
+    <a href="cadastro.html" class="btn-solid" data-auth="guest">Criar conta</a>
+
+    <a href="perfil.html" class="header-conta" data-auth="user" hidden>
+      <span class="header-conta-avatar" id="headerContaAvatar"></span>
+      <span class="header-conta-nome" id="headerContaNome"></span>
+    </a>
+  </div>
+
+</header>
+
+<main class="perfil-page">
+
+  <!-- ===== MODO VISUALIZAÇÃO ===== -->
+  <section id="perfil-visualizacao" class="perfil-container">
+
+    <div class="perfil-cabecalho">
+
+      <div class="perfil-avatar">
+        <img id="perfilFotoView" src="" alt="Foto de perfil" hidden>
+        <span id="perfilIniciaisView" class="perfil-iniciais"></span>
+      </div>
+
+      <div class="perfil-dados">
+
+        <div class="perfil-linha-topo">
+          <h1 id="perfilNomeView">Carregando...</h1>
+          <button id="btnEditarPerfil" type="button" class="btn-secundario">Editar perfil</button>
+          <button id="btnSair" type="button" class="btn-secundario btn-sair">Sair</button>
+        </div>
+
+        <div class="perfil-badges">
+          <span class="badge" id="badgeEmail">
+            <span class="badge-icone">✉️</span>
+            <span id="perfilEmailView">carregando...</span>
+          </span>
+
+          <span class="badge" id="badgeTelefone" hidden>
+            <span class="badge-icone">📱</span>
+            <span id="perfilTelefoneView"></span>
+          </span>
+
+          <span class="badge" id="badgeIdade" hidden>
+            <span class="badge-icone">🎂</span>
+            <span id="perfilIdadeView"></span>
+          </span>
+        </div>
+
+        <p class="perfil-membro-desde">Membro do Portal da Bíblia · desde <span id="perfilDataCadastro"></span></p>
+
+      </div>
+
+    </div>
+
+    <p id="mensagem"></p>
+
+  </section>
+
+  <!-- ===== MODO EDIÇÃO ===== -->
+  <section id="perfil-edicao" class="perfil-container" hidden>
+
+    <div class="card-conta card-editar-perfil">
+
+      <h1>Editar perfil</h1>
+      <p class="subtitle">Preencha só o que você quiser deixar visível — tudo aqui é opcional, menos o nome.</p>
+
+      <form id="perfilForm">
+
+        <div class="editar-foto-bloco">
+          <div class="perfil-avatar perfil-avatar-editar">
+            <img id="perfilFotoPreview" src="" alt="Pré-visualização da foto" hidden>
+            <span id="perfilIniciaisPreview" class="perfil-iniciais"></span>
+            <label for="perfilFotoInput" class="botao-trocar-foto">📷</label>
+            <input type="file" id="perfilFotoInput" accept="image/*" hidden>
+          </div>
+          <span class="foto-legenda">Clique no ícone para trocar a foto (opcional)</span>
+        </div>
+
+        <label for="nomeExibicao">Nome</label>
+        <input type="text" id="nomeExibicao" placeholder="Seu nome" required>
+
+        <label for="telefone">Telefone <span class="campo-opcional">(opcional)</span></label>
+        <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+
+        <label for="idade">Idade <span class="campo-opcional">(opcional)</span></label>
+        <input type="number" id="idade" placeholder="Sua idade" min="5" max="120">
+
+        <div class="editar-botoes">
+          <button type="button" id="btnCancelarEdicao" class="btn-secundario">Cancelar</button>
+          <button type="submit" class="btn-solid">Salvar alterações</button>
+        </div>
+
+      </form>
+
+      <p id="mensagemEdicao"></p>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4c2.5-1 5.5-1 8 0v14c-2.5-1-5.5-1-8 0V4Z"/><path d="M22 4c-2.5-1-5.5-1-8 0v14c2.5-1 5.5-1 8 0V4Z"/></svg>
+    Portal da Bíblia
+  </div>
+  <p>"Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho." — Salmos 119:105</p>
+  <p>&copy; 2026 Portal da Bíblia. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
