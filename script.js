@@ -1,10 +1,3 @@
-/* ============================================================
-   BÍBLIA ONLINE — leitura completa, índice de livros/capítulos
-   e marcação de versículos.
-   Fonte do texto: Almeida Corrigida e Fiel (uso livre / domínio público).
-   O JSON é hospedado LOCALMENTE no projeto (bible-acf.json) em vez de
-   buscado de um servidor externo — mais rápido e não depende de rede.
-============================================================ */
 
 const BIBLE_URL = "bible-acf.json";
 

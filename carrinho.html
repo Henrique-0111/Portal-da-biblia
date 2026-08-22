@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho - Portal Bíblico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hero">
+
+    <h1>Carrinho</h1>
+
+    <p>Revise seus itens e finalize sua compra.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Lista de produtos -->
+    <div class="cart-card">
+      <div class="cart-header">
+        
+        <span>Produto</span>
+        <span>Preço</span>
+        <span>Quantidade</span>
+        <span>Subtotal</span>
+        <span></span>
+      </div>
+
+      <div class="cart-item">
+        <div class="produto">
+          <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=200&q=80" alt="Bíblia Sagrada">
+          <div class="produto-info">
+            <h3>Bíblia Sagrada</h3>
+            <p>Almeida Revista e Corrigida</p>
+            <span class="badge">📖 Capa dura</span>
+          </div>
+        </div>
+        <div class="preco">R$ 129,90</div>
+        <div class="quantidade">
+          <button onclick="alterarQtd(this, -1)">−</button>
+          <span>1</span>
+          <button onclick="alterarQtd(this, 1)">+</button>
+        </div>
+        <div class="subtotal">R$ 129,90</div>
+        <button class="remover" onclick="removerItem(this)">🗑</button>
+      </div>
+
+      <div class="cart-item">
+        <div class="produto">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=200&q=80" alt="Pão Diário 2025">
+          <div class="produto-info">
+            <h3>Pão Diário 2025</h3>
+            <p>Devocional Diário</p>
+            <span class="badge">📅 Capa comum</span>
+          </div>
+        </div>
+        <div class="preco">R$ 64,90</div>
+        <div class="quantidade">
+          <button onclick="alterarQtd(this, -1)">−</button>
+          <span>1</span>
+          <button onclick="alterarQtd(this, 1)">+</button>
+        </div>
+        <div class="subtotal">R$ 64,90</div>
+        <button class="remover" onclick="removerItem(this)">🗑</button>
+      </div>
+
+      <div class="cart-item">
+        <div class="produto">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=200&q=80" alt="Caderno de Oração">
+          <div class="produto-info">
+            <h3>Caderno de Oração</h3>
+            <p>Anotações e Reflexões</p>
+            <span class="badge">📖 Capa dura</span>
+          </div>
+        </div>
+        <div class="preco">R$ 39,90</div>
+        <div class="quantidade">
+          <button onclick="alterarQtd(this, -1)">−</button>
+          <span>1</span>
+          <button onclick="alterarQtd(this, 1)">+</button>
+        </div>
+        <div class="subtotal">R$ 39,90</div>
+        <button class="remover" onclick="removerItem(this)">🗑</button>
+      </div>
+
+      <a href="loja.html" class="continuar">← Continuar comprando</a>
+    </div>
+
+    <!-- Resumo do pedido -->
+    <div class="resumo-card">
+      <h2>Resumo do pedido</h2>
+
+      <div class="resumo-linha">
+        <span>Subtotal</span>
+        <span id="subtotalValor">R$ 234,70</span>
+      </div>
+      <div class="resumo-linha">
+        <span>Frete</span>
+        <span>R$ 0,00</span>
+      </div>
+      <p class="frete-obs">Frete calculado na finalização</p>
+
+      <hr class="resumo-divisor">
+
+      <div class="resumo-total">
+        <span>Total</span>
+        <span id="totalValor">R$ 234,70</span>
+      </div>
+
+       <button class="btn-finalizar">
+        <a href="pedido.html"> Finalizar Pedido </a>  
+        
+      </button>
+      
+      </button>
+     
+
+      <div class="info-item">
+        <span class="icon">🛡️</span>
+        <div>
+          <strong>Compra segura</strong>
+          <span>Seus dados protegidos</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="icon">🚚</span>
+        <div>
+          <strong>Entrega para todo o Brasil</strong>
+          <span>Com rastreamento</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="icon">🙂</span>
+        <div>
+          <strong>Satisfação garantida</strong>
+          <span>7 dias para devolução</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Preços de cada produto (na ordem que aparecem no carrinho)
+    var precos = [129.90, 64.90, 39.90];
+
+    function alterarQtd(botao, delta) {
+      var item = botao.closest(".cart-item");
+      var spanQtd = item.querySelector(".quantidade span");
+      var qtd = parseInt(spanQtd.textContent);
+
+      qtd = qtd + delta;
+      if (qtd < 1) {
+        qtd = 1;
+      }
+      spanQtd.textContent = qtd;
+
+      // Atualiza o subtotal do item
+      var itens = document.querySelectorAll(".cart-item");
+      var index = Array.from(itens).indexOf(item);
+      var novoSubtotal = precos[index] * qtd;
+      item.querySelector(".subtotal").textContent = "R$ " + novoSubtotal.toFixed(2).replace(".", ",");
+
+      atualizarResumo();
+    }
+
+    function removerItem(botao) {
+      var item = botao.closest(".cart-item");
+      item.remove();
+      atualizarResumo();
+    }
+
+    function atualizarResumo() {
+      var subtotais = document.querySelectorAll(".subtotal");
+      var total = 0;
+
+      subtotais.forEach(function(el) {
+        var valor = el.textContent.replace("R$", "").replace(".", "").replace(",", ".").trim();
+        total = total + parseFloat(valor);
+      });
+
+      var totalFormatado = "R$ " + total.toFixed(2).replace(".", ",");
+      document.getElementById("subtotalValor").textContent = totalFormatado;
+      document.getElementById("totalValor").textContent = totalFormatado;
+    }
+  </script>
+
+</body>
+</html>

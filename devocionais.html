@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Devocionais | Portal Bíblico</title>
+</head>
+<body>
+
+<!------------------------------Topo----------------------------------->
+    <header id="topo">
+
+        <div id="logo">
+            <span class="icone-logo">📖</span>
+            <h2>Portal da Bíblia</h2>
+        </div>
+
+        <nav>
+            <a href="index.html" id="navInicio">Início</a>
+
+            <div class="nav-dropdown">
+                <a href="biblia.html" id="navBiblia">Bíblia <span class="seta">▾</span></a>
+            </div>
+
+            <a href="devocionais.html" id="navDevocionais" class="ativo">Devocionais</a>
+
+            <div>
+            <a href="sobre.html" id="navSobre">Sobre</a>
+            </div>
+            <div>
+            <a href="loja.html" id="navLoja">Loja</a>
+            </div>
+        </nav>
+
+        <div id="acoes-topo">
+            <button id="btnBusca" class="icone-btn" aria-label="Buscar">🔍</button>
+            <button id="btnNotificacoes" class="icone-btn" aria-label="Notificações">🔔</button>
+            <button id="btnConta" class="btn-conta">👤 Minha conta</button>
+        </div>
+
+    </header>
+
+<!------------------------------Cabecalho da Pagina----------------------------------->
+
+<section id="devocionais-topo">
+
+    <div id="devocionais-titulo">
+        <h1>Devocionais</h1>
+        <p>Inspiração diária para fortalecer sua fé e aproximar você de Deus.</p>
+    </div>
+
+    <div id="devocionais-busca">
+        <span class="icone-busca">🔍</span>
+        <input type="text" id="inpBuscaDevocional" placeholder="Buscar devocionais...">
+    </div>
+
+</section>
+
+<!------------------------------Filtros----------------------------------->
+
+<section id="filtros-devocionais">
+
+    <div id="lista-filtros">
+        <button class="filtro filtro-ativo" data-filtro="todos">Todos</button>
+        <button class="filtro" data-filtro="fe">Fé</button>
+        <button class="filtro" data-filtro="esperanca">Esperança</button>
+        <button class="filtro" data-filtro="amor">Amor</button>
+        <button class="filtro" data-filtro="gratidao">Gratidão</button>
+        <button class="filtro" data-filtro="perdao">Perdão</button>
+        <button class="filtro" data-filtro="ansiedade">Ansiedade</button>
+        <button class="filtro filtro-mais" data-filtro="mais">Mais <span class="seta">▾</span></button>
+    </div>
+
+</section>
+
+<!------------------------------Conteudo Principal----------------------------------->
+
+<section id="devocionais-conteudo">
+
+    <!-- Coluna esquerda: lista de devocionais -->
+    <div id="lista-devocionais">
+
+        <article class="card-devocional">
+            <div class="card-devocional-imagem">
+                <img src="images/devocional-planos-deus.jpg" alt="Bíblia aberta ao amanhecer">
+            </div>
+            <div class="card-devocional-conteudo">
+                <span class="tag-categoria">Fé</span>
+                <h3>Confie nos planos de Deus</h3>
+                <p>Deus tem planos perfeitos para sua vida, mesmo quando não entendemos o caminho. Aprenda a confiar e descansar em Suas promessas.</p>
+                <div class="card-devocional-rodape">
+                    <div class="card-devocional-info">
+                        <span class="info-item">📅 7 de maio de 2025</span>
+                        <span class="info-item">🕒 5 min de leitura</span>
+                    </div>
+                    <a href="#" class="link-ler-agora">Ler agora →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card-devocional">
+            <div class="card-devocional-imagem">
+                <img src="images/devocional-deus-renova-forcas.jpg" alt="Silhueta contemplando o pôr do sol">
+            </div>
+            <div class="card-devocional-conteudo">
+                <span class="tag-categoria">Esperança</span>
+                <h3>Deus renova as forças</h3>
+                <p>Quando estamos cansados, Deus nos sustenta e renova nossas forças. Ele é a nossa fonte de esperança.</p>
+                <div class="card-devocional-rodape">
+                    <div class="card-devocional-info">
+                        <span class="info-item">📅 6 de maio de 2025</span>
+                        <span class="info-item">🕒 4 min de leitura</span>
+                    </div>
+                    <a href="#" class="link-ler-agora">Ler agora →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card-devocional">
+            <div class="card-devocional-imagem">
+                <img src="images/devocional-grato-circunstancias.jpg" alt="Broto crescendo na terra ao amanhecer">
+            </div>
+            <div class="card-devocional-conteudo">
+                <span class="tag-categoria">Gratidão</span>
+                <h3>Seja grato em todas as circunstâncias</h3>
+                <p>A gratidão transforma nosso coração e nos ajuda a enxergar as bênçãos de Deus todos os dias.</p>
+                <div class="card-devocional-rodape">
+                    <div class="card-devocional-info">
+                        <span class="info-item">📅 5 de maio de 2025</span>
+                        <span class="info-item">🕒 4 min de leitura</span>
+                    </div>
+                    <a href="#" class="link-ler-agora">Ler agora →</a>
+                </div>
+            </div>
+        </article>
+
+        <div id="carregar-mais">
+            <button id="btnCarregarMais">Carregar mais devocionais</button>
+        </div>
+
+    </div>
+
+    <!-- Coluna direita: sidebar -->
+    <aside id="sidebar-devocionais">
+
+        <div class="card-sidebar" id="versiculo-dia">
+            <h2><span class="icone-sidebar">☀️</span> Versículo do Dia</h2>
+
+            <div class="versiculo-caixa">
+                <span class="aspas">“</span>
+                <p class="versiculo-texto">Entrega o teu caminho ao Senhor; confia nele, e o mais ele fará.</p>
+                <p class="versiculo-referencia">Salmos 37:5</p>
+            </div>
+
+            <div class="versiculo-acoes">
+                <button class="acao-link"><span>🤍</span> Favoritar</button>
+                <button class="acao-link"><span>🔗</span> Compartilhar</button>
+            </div>
+
+            <a href="#" class="link-capitulo">
+                <span class="capitulo-icone">📖</span>
+                <span class="capitulo-texto">
+                    <strong>Ler capítulo completo</strong>
+                    <small>Salmos 37</small>
+                </span>
+                <span class="capitulo-seta">›</span>
+            </a>
+        </div>
+
+        <div class="card-sidebar" id="destaques">
+            <h2><span class="icone-sidebar">⭐</span> Destaques</h2>
+
+            <ul class="lista-destaques">
+                <li>
+                    <a href="#" class="item-destaque">
+                        <span class="destaque-icone">📅</span>
+                        <span class="destaque-texto">
+                            <strong>Plano de Leitura Anual</strong>
+                            <small>Continue firme! Deus tem uma mensagem para você todos os dias.</small>
+                        </span>
+                        <span class="destaque-seta">›</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item-destaque">
+                        <span class="destaque-icone">🔖</span>
+                        <span class="destaque-texto">
+                            <strong>Devocionais em Áudio</strong>
+                            <small>Ouça onde e quando quiser.</small>
+                        </span>
+                        <span class="destaque-seta">›</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item-destaque">
+                        <span class="destaque-icone">✏️</span>
+                        <span class="destaque-texto">
+                            <strong>Escreva seu Devocional</strong>
+                            <small>Anote suas reflexões e cresça na fé.</small>
+                        </span>
+                        <span class="destaque-seta">›</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </aside>
+
+</section>
+
+<!------------------------------Rodape----------------------------------->
+
+    <footer id="rodape">
+        <p>Portal da Bíblia / Todos os direitos reservados</p>
+    </footer>
+
+<script src="devocionais.js"></script>
+
+</body>
+</html>

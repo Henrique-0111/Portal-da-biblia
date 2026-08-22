@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rastrear Pedido - Portal Bíblico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Coluna da esquerda -->
+    <div class="coluna-esquerda">
+
+      <h1>Rastrear pedido</h1>
+      <p class="etapa">Pedido #48213 · Realizado em 07 de agosto de 2026</p>
+
+      <div class="progresso">
+        <span class="progresso-item ativo">Andamento</span>
+        <span class="linha"></span>
+        <span class="progresso-item ativo">Pagamento</span>
+        <span class="linha"></span>
+        <span class="progresso-item atual">Confirmação</span>
+      </div>
+
+      <div class="rastreio-card">
+
+        <div class="rastreio-topo">
+          <div>
+            <p class="previsao-label">Previsão de entrega</p>
+            <h2>12 de agosto de 2026</h2>
+          </div>
+          <span class="status-badge">Em trânsito</span>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item concluido">
+            <span class="ponto"></span>
+            <div class="timeline-info">
+              <h3>Pedido confirmado</h3>
+              <p>Pagamento aprovado via Pix</p>
+              <span class="timeline-data">07 ago · 09:14</span>
+            </div>
+          </div>
+
+          <div class="timeline-item concluido">
+            <span class="ponto"></span>
+            <div class="timeline-info">
+              <h3>Pedido separado</h3>
+              <p>Embalado no centro de distribuição</p>
+              <span class="timeline-data">08 ago · 15:40</span>
+            </div>
+          </div>
+
+          <div class="timeline-item concluido">
+            <span class="ponto"></span>
+            <div class="timeline-info">
+              <h3>Saiu para entrega</h3>
+              <p>Transportadora Correios · Fortaleza, CE</p>
+              <span class="timeline-data">10 ago · 07:52</span>
+            </div>
+          </div>
+
+          <div class="timeline-item pendente">
+            <span class="ponto"></span>
+            <div class="timeline-info">
+              <h3>Entregue</h3>
+              <p>Previsto para 12 de agosto</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="endereco-card">
+        <h2>Endereço de entrega</h2>
+        <p>Brenda Ferreira</p>
+        <p>Rua das Palmeiras, 245 · Centro</p>
+        <p>Russas – CE, 62900-000</p>
+      </div>
+
+    </div>
+
+    <!-- Coluna da direita -->
+    <div class="coluna-direita">
+
+      <div class="resumo-card">
+        <h2>Itens do pedido</h2>
+
+        <div class="item-pedido">
+          <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=100&q=80" alt="Bíblia NVI Capa Preta">
+          <div class="item-info">
+            <h3>Bíblia NVI Capa Preta</h3>
+            <p>Qtd: 1</p>
+          </div>
+        </div>
+
+        <div class="item-pedido">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=100&q=80" alt="Café com Deus Pai 2024">
+          <div class="item-info">
+            <h3>Café com Deus Pai 2024</h3>
+            <p>Qtd: 2</p>
+          </div>
+        </div>
+
+        <div class="item-pedido">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=100&q=80" alt="Devocional Caminho de Fé">
+          <div class="item-info">
+            <h3>Devocional Caminho de Fé</h3>
+            <p>Qtd: 1</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="resumo-total">
+          <span>Total pago</span>
+          <span>R$ 275,12</span>
+        </div>
+
+        <button class="btn-confirmar">Solicitar suporte</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

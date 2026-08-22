@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finalizar Pedido - Portal Bíblico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Coluna da esquerda -->
+    <div class="coluna-esquerda">
+
+      <h1>Finalizar pedido</h1>
+      <p class="etapa">Etapa 2 de 3 · Pagamento</p>
+
+      <div class="progresso">
+        <span class="progresso-item ativo">Andamento</span>
+        <span class="linha"></span>
+        <span class="progresso-item atual">Pagamento</span>
+        <span class="linha"></span>
+        <span class="progresso-item">Confirmação</span>
+      </div>
+
+      <h2>Forma de pagamento</h2>
+
+      <div class="pagamento-opcoes">
+        <div class="pagamento-card selecionado">
+          <strong>Pix</strong>
+          <p>5% de desconto</p>
+        </div>
+
+        <div class="pagamento-card">
+          <strong>Crédito</strong>
+          <p>Em até 12x</p>
+        </div>
+
+        <div class="pagamento-card">
+          <strong>Débito</strong>
+          <p>À vista</p>
+        </div>
+
+        <div class="pagamento-card">
+          <strong>Boleto</strong>
+          <p>Vence em 3 dias</p>
+        </div>
+      </div>
+
+      <h2>Itens do pedido</h2>
+
+      <div class="itens-card">
+
+        <div class="item-pedido">
+          <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=100&q=80" alt="Bíblia Sagrada NVI Capa Luxo Preta">
+          <div class="item-info">
+            <h3>Bíblia Sagrada NVI Capa Luxo Preta</h3>
+            <p>NVI · Qtd: 1</p>
+          </div>
+          <div class="item-preco">R$ 149,90</div>
+        </div>
+
+        <div class="item-pedido">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=100&q=80" alt="Café com Deus Pai 2024">
+          <div class="item-info">
+            <h3>Café com Deus Pai 2024</h3>
+            <p>Devocional · Qtd: 2</p>
+          </div>
+          <div class="item-preco">R$ 79,80</div>
+        </div>
+
+        <div class="item-pedido">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=100&q=80" alt="Devocional Diário Caminho de Fé">
+          <div class="item-info">
+            <h3>Devocional Diário Caminho de Fé</h3>
+            <p>Qtd: 1</p>
+          </div>
+          <div class="item-preco">R$ 59,90</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Coluna da direita -->
+    <div class="coluna-direita">
+
+      <div class="resumo-card">
+        <h2>Resumo do pedido</h2>
+
+        <div class="resumo-linha">
+          <span>Subtotal</span>
+          <span>R$ 289,60</span>
+        </div>
+
+        <div class="resumo-linha">
+          <span>Frete</span>
+          <span class="destaque">Grátis</span>
+        </div>
+
+        <div class="resumo-linha">
+          <span class="destaque">Desconto Pix</span>
+          <span class="destaque">− R$ 14,48</span>
+        </div>
+
+        <hr>
+
+        <div class="resumo-total">
+          <span>Total</span>
+          <span>R$ 275,12</span>
+        </div>
+
+        <div class="pagando-com">Pagando com Pix</div>
+
+        <button class="btn-confirmar">
+          <a href="rastreio.html">Confirmar Pedido</a>
+        </button>
+
+        <p class="ambiente-seguro">Ambiente seguro</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
